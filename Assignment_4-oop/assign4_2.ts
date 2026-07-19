@@ -57,7 +57,7 @@ class Hero {
                 if (item.quantity > 0) {
                     this.HP += 25;
                     item.quantity --;
-                    console.log(`${this.name} used ${itemName} +25HP! ${item.name}'s quantity left: ${item.quantity}`)
+                    console.log(`${this.name} used ${itemName} +25HP! ${itemName}'s quantity left: ${item.quantity}`)
                     if (item.quantity === 0) {
                         this.inventory = this.inventory.filter(i => i !== item);
                     }
@@ -66,6 +66,7 @@ class Hero {
         }
     }
 
+    // Part 4
     takeDamage(damage: number) {
         if (this.HP > 0) {
             this.HP -= damage;
@@ -76,9 +77,9 @@ class Hero {
     }
 }
 
-const potion_s = new Product("P001", "Potion [S]", 200, 1);
+const item1 = new Product("P001", "Potion [S]", 200, 1);
 const hero1 = new Hero("Knight", 200, []);
-hero1.addItem(potion_s);
+hero1.addItem(item1);
 hero1.takeDamage(199);
 hero1.useItem("Potion [S]");
 hero1.takeDamage(100);
